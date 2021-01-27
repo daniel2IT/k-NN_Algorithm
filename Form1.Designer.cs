@@ -56,6 +56,9 @@ namespace Nearest_Neighbors
             this.label7 = new System.Windows.Forms.Label();
             this.Display = new System.Windows.Forms.Button();
             this.revenueBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.point2DBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.revenueBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.point2DBindingSource)).BeginInit();
@@ -71,7 +74,7 @@ namespace Nearest_Neighbors
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(45, 53);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(531, 232);
+            this.listView1.Size = new System.Drawing.Size(531, 287);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -114,7 +117,7 @@ namespace Nearest_Neighbors
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(42, 301);
+            this.label2.Location = new System.Drawing.Point(41, 361);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(200, 20);
             this.label2.TabIndex = 3;
@@ -128,9 +131,9 @@ namespace Nearest_Neighbors
             this.columnHeader3});
             this.listView2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(46, 341);
+            this.listView2.Location = new System.Drawing.Point(46, 402);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(530, 215);
+            this.listView2.Size = new System.Drawing.Size(530, 154);
             this.listView2.TabIndex = 4;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
@@ -153,9 +156,9 @@ namespace Nearest_Neighbors
             // 
             this.button2.Location = new System.Drawing.Point(1265, 562);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(568, 77);
+            this.button2.Size = new System.Drawing.Size(189, 77);
             this.button2.TabIndex = 5;
-            this.button2.Text = "Objektų Klasifikavimas";
+            this.button2.Text = "e7 Objekto Klasifikavimas";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -177,7 +180,7 @@ namespace Nearest_Neighbors
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(180, 20);
             this.label3.TabIndex = 10;
-            this.label3.Text = "1 Objekto Rezultatai";
+            this.label3.Text = "7 Objekto Rezultatai";
             // 
             // label4
             // 
@@ -187,7 +190,7 @@ namespace Nearest_Neighbors
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(180, 20);
             this.label4.TabIndex = 11;
-            this.label4.Text = "2 Objekto Rezultatai";
+            this.label4.Text = "8 Objekto Rezultatai";
             // 
             // cartesianChart1
             // 
@@ -233,9 +236,9 @@ namespace Nearest_Neighbors
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(1266, 265);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(229, 20);
+            this.label6.Size = new System.Drawing.Size(239, 20);
             this.label6.TabIndex = 17;
-            this.label6.Text = "Pagal k-NN 1 Objekta Z = ";
+            this.label6.Text = "Pagal k-NN e7 Objekto Z = ";
             // 
             // listBox5
             // 
@@ -273,9 +276,9 @@ namespace Nearest_Neighbors
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(1570, 265);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(229, 20);
+            this.label7.Size = new System.Drawing.Size(239, 20);
             this.label7.TabIndex = 21;
-            this.label7.Text = "Pagal k-NN 2 Objekta Z = ";
+            this.label7.Text = "Pagal k-NN e8 Objekto Z = ";
             // 
             // Display
             // 
@@ -291,6 +294,36 @@ namespace Nearest_Neighbors
             // 
             this.revenueBindingSource1.CurrentChanged += new System.EventHandler(this.revenueBindingSource1_CurrentChanged);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(1499, 561);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(221, 77);
+            this.button3.TabIndex = 23;
+            this.button3.Text = "e8 Objekto Klasifikavimas";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(1726, 561);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(107, 77);
+            this.button4.TabIndex = 24;
+            this.button4.Text = "Ištrinti paskutinę eilutę";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(1460, 561);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(33, 77);
+            this.button5.TabIndex = 25;
+            this.button5.Text = "+";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // point2DBindingSource
             // 
             this.point2DBindingSource.DataSource = typeof(Nearest_Neighbors.Point2D);
@@ -300,6 +333,9 @@ namespace Nearest_Neighbors
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1850, 676);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.Display);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.listBox6);
@@ -360,6 +396,9 @@ namespace Nearest_Neighbors
         private System.Windows.Forms.BindingSource point2DBindingSource;
         private System.Windows.Forms.Button Display;
         private System.Windows.Forms.BindingSource revenueBindingSource1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
 

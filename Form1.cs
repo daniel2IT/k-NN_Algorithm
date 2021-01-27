@@ -109,7 +109,7 @@ namespace Nearest_Neighbors
         private void button2_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
-            listBox2.Items.Clear();
+            listBox4.Items.Clear();
 
 
             // Get the number of rows and columns (Mokymo Imtis ) 
@@ -160,7 +160,7 @@ namespace Nearest_Neighbors
      
             // OBject To Observe , For FInd (Objektai klasifikavimui)
             var test = new Point2D(1, 2, "");
-            var test2 = new Point2D(0, 2, "");
+      
 
 
             // Find neadrestNeighbor for object : 
@@ -198,68 +198,7 @@ namespace Nearest_Neighbors
             }
 
 
-            //*********************************************************************//
-            // Objekto Klasifikavimui NR 2
-            var trains2 = new Point2D[6]{
-                new Point2D(Convert.ToDouble(results[0,0]),
-                Convert.ToDouble(results[0,1]), results[0,2]),
-
-                new Point2D(Convert.ToDouble(results[1,0]),
-                Convert.ToDouble(results[1,1]), results[1,2]),
-
-                new Point2D(Convert.ToDouble(results[2,0]),
-                Convert.ToDouble(results[2,1]), results[2,2]),
-
-                new Point2D(Convert.ToDouble(results[3,0]),
-                Convert.ToDouble(results[3,1]), results[3,2]),
-
-                new Point2D(Convert.ToDouble(results[4,0]),
-                Convert.ToDouble(results[4,1]), results[4,2]),
-
-                new Point2D(Convert.ToDouble(results[5,0]),
-                Convert.ToDouble(results[5,1]), results[5,2])
-
-            };
-
-            
-
-            // Find nearestNeighbor for object : 
-            var nearestNeighbor2 = trains2.OrderBy(p => p.DistanceSquare(test2, this)).First();
-
-            // Duplicate Finder
-            for (int i = 0; i < listBox2.Items.Count; i++)
-            {
-                for (int j = 1; j < listBox2.Items.Count; j++)
-                {
-                    if (i != j)
-                    {
-                        try { 
-                        if (listBox2.Items[i].ToString() == listBox2.Items[j].ToString())
-                        {
-                            trains2[j].Class = "Neaisku";
-                        }
-                        }
-                        catch
-                        {
-                            continue;
-                        }
-                    }
-                }
-            }
-
-            // Sort K-NN Classes
-            sort_By_k_NN_Results2 = trains2.ToList();
-
-            listBox5.Items.Clear();
-            listBox2.Items.Clear();
-
-            List<Point2D> SortedList2 = sort_By_k_NN_Results2.OrderBy(o => o.DistanceSquare(test2, this)).ToList();
-
-
-            foreach (Point2D item in SortedList2)
-            {
-                listBox6.Items.Add(item.Class);
-            }
+          
 
         }
 
@@ -406,6 +345,133 @@ namespace Nearest_Neighbors
         private void button3_Click(object sender, EventArgs e)
         {
 
+            listBox6.Items.Clear();
+            listBox2.Items.Clear();
+
+
+            // Get the number of rows and columns (Mokymo Imtis ) 
+            int num_rows = listView1.Items.Count;
+            int num_cols = 0;
+            for (int i = 0; i < num_rows; i++)
+            {
+                if (num_cols < listView1.Items[i].SubItems.Count)
+                    num_cols = listView1.Items[i].SubItems.Count;
+            }
+
+            // Make the array.
+            string[,] results = new string[num_rows, num_cols];
+
+            // Populate the array.
+            // Note that SubItems includes the items, too.
+            for (int r = 0; r < num_rows; r++)
+            {
+                for (int c = 0; c < num_cols; c++)
+                    results[r, c] = listView1.Items[r].SubItems[c].Text;
+            }
+
+
+            //*********************************************************************//
+            // Objekto Klasifikavimui NR 2
+            var trains2 = new Point2D[7]{
+                new Point2D(Convert.ToDouble(results[0,0]),
+                Convert.ToDouble(results[0,1]), results[0,2]),
+
+                new Point2D(Convert.ToDouble(results[1,0]),
+                Convert.ToDouble(results[1,1]), results[1,2]),
+
+                new Point2D(Convert.ToDouble(results[2,0]),
+                Convert.ToDouble(results[2,1]), results[2,2]),
+
+                new Point2D(Convert.ToDouble(results[3,0]),
+                Convert.ToDouble(results[3,1]), results[3,2]),
+
+                new Point2D(Convert.ToDouble(results[4,0]),
+                Convert.ToDouble(results[4,1]), results[4,2]),
+
+                new Point2D(Convert.ToDouble(results[5,0]),
+                Convert.ToDouble(results[5,1]), results[5,2]),
+
+                new Point2D(Convert.ToDouble(results[6,0]),
+                Convert.ToDouble(results[6,1]), results[6,2])
+
+            };
+
+            // OBject To Observe , For FInd (Objektai klasifikavimui)
+            var test2 = new Point2D(0, 2, "");
+
+            // Find nearestNeighbor for object : 
+            var nearestNeighbor2 = trains2.OrderBy(p => p.DistanceSquare(test2, this)).First();
+
+            // Duplicate Finder
+
+            for (int i = 0; i < listBox2.Items.Count; i++)
+            {
+                for (int j = 0; j < listBox2.Items.Count; j++)
+                {
+                    if (i != j)
+                    {
+                        if (listBox2.Items[i].ToString() == listBox2.Items[j].ToString())
+                        {
+                            trains2[j].Class = "Neaisku";
+                           
+                        }
+                    }
+                }
+            }
+
+
+  /*          for (int i = 0; i < listBox2.Items.Count; i++)
+            {
+                for (int j = 1; j < listBox2.Items.Count; j++)
+                {
+                    if (i != j)
+                    {
+                        try
+                        {
+                            if (listBox2.Items[i].ToString() == listBox2.Items[j].ToString())
+                            {
+                                trains2[j].Class = "Neaisku";
+                            }
+                        }
+                        catch
+                        {
+                            continue;
+                        }
+                    }
+                }
+            }*/
+
+            // Sort K-NN Classes
+            sort_By_k_NN_Results2 = trains2.ToList();
+
+            listBox5.Items.Clear();
+            listBox2.Items.Clear();
+
+            List<Point2D> SortedList2 = sort_By_k_NN_Results2.OrderBy(o => o.DistanceSquare(test2, this)).ToList();
+
+
+            foreach (Point2D item in SortedList2)
+            {
+                listBox6.Items.Add(item.Class);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                Connection.AddUsers(listBox4.SelectedItem.ToString());
+            }
+            catch
+            {
+                MessageBox.Show("Priskirkite k - NN naujam objektui");
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Connection.DeleteUser();
         }
     }
 }

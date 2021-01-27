@@ -56,12 +56,64 @@ namespace Nearest_Neighbors
 
             dbConn = new MySqlConnection(ConnString);
         }
+        
+        public static string DeleteUser()
+        {
+
+            try
+            {
+
+                string sql = "DELETE FROM `neighbor`.`new_imtis2` WHERE(`id` = '0');";
+
+
+                MySqlCommand cmd = new MySqlCommand(sql, dbConn);
+
+                dbConn.Open();
+
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            dbConn.Close();
+
+            return "Deleted";
+        }
+
+        public static string AddUsers(string Value)
+        {
+          
+            try
+            {
+
+                string sql = $"INSERT INTO new_imtis2 (X, Y, Z) VALUES ('1','2','{Value}')";
+               
+
+                MySqlCommand cmd = new MySqlCommand(sql, dbConn);
+
+                         dbConn.Open();
+
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            dbConn.Close();
+
+            return "Created";
+        }
 
         public static List<Connection> GetUsers()
         {
             List<Connection> users = new List<Connection>();
 
-            String query = "SELECT * FROM imtis";
+            String query = "SELECT * FROM new_imtis2";
 
 
             MySqlCommand cmd = new MySqlCommand(query, dbConn);
