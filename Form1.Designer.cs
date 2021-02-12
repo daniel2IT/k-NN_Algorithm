@@ -34,6 +34,7 @@ namespace Nearest_Neighbors
             this.x = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.y = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.z = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@ namespace Nearest_Neighbors
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button2 = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,15 +52,27 @@ namespace Nearest_Neighbors
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.listBox4 = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.listBox5 = new System.Windows.Forms.ListBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox6 = new System.Windows.Forms.ListBox();
             this.label7 = new System.Windows.Forms.Label();
             this.Display = new System.Windows.Forms.Button();
             this.revenueBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.SportoSakaTxt = new System.Windows.Forms.TextBox();
+            this.listView3 = new System.Windows.Forms.ListView();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listView4 = new System.Windows.Forms.ListView();
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.SvorisTxt = new System.Windows.Forms.TextBox();
+            this.PozicijaTxt = new System.Windows.Forms.TextBox();
+            this.UgisTxt = new System.Windows.Forms.TextBox();
+            this.Id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.point2DBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.revenueBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.point2DBindingSource)).BeginInit();
@@ -69,12 +83,13 @@ namespace Nearest_Neighbors
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.x,
             this.y,
-            this.z});
+            this.z,
+            this.columnHeader4});
             this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(45, 53);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(531, 287);
+            this.listView1.Size = new System.Drawing.Size(531, 238);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -83,21 +98,29 @@ namespace Nearest_Neighbors
             // x
             // 
             this.x.Tag = "";
-            this.x.Text = "x";
+            this.x.Text = "Ūgis";
+            this.x.Width = 85;
             // 
             // y
             // 
-            this.y.Text = "y";
+            this.y.Text = "Svoris";
+            this.y.Width = 103;
             // 
             // z
             // 
-            this.z.Text = "z";
+            this.z.Text = "Sporto šaka";
+            this.z.Width = 128;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Pozicija";
+            this.columnHeader4.Width = 116;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(45, 570);
+            this.button1.Location = new System.Drawing.Point(45, 562);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(531, 77);
+            this.button1.Size = new System.Drawing.Size(212, 77);
             this.button1.TabIndex = 1;
             this.button1.Text = "Gauti „Mokymo Imtis“ iš „MySQL“";
             this.button1.UseVisualStyleBackColor = true;
@@ -117,7 +140,7 @@ namespace Nearest_Neighbors
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(41, 361);
+            this.label2.Location = new System.Drawing.Point(42, 301);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(200, 20);
             this.label2.TabIndex = 3;
@@ -126,9 +149,11 @@ namespace Nearest_Neighbors
             // listView2
             // 
             this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Id,
             this.columnHeader1,
             this.columnHeader2,
-            this.columnHeader3});
+            this.columnHeader3,
+            this.columnHeader5});
             this.listView2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView2.HideSelection = false;
             this.listView2.Location = new System.Drawing.Point(46, 402);
@@ -138,27 +163,36 @@ namespace Nearest_Neighbors
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
             this.listView2.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged);
+            this.listView2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listView2_MouseClick);
             // 
             // columnHeader1
             // 
             this.columnHeader1.Tag = "";
-            this.columnHeader1.Text = "x";
+            this.columnHeader1.Text = "Ūgis";
+            this.columnHeader1.Width = 99;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "y";
+            this.columnHeader2.Text = "Svoris";
+            this.columnHeader2.Width = 80;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "z";
+            this.columnHeader3.Text = "Sporto Šaka";
+            this.columnHeader3.Width = 141;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Pozicija";
+            this.columnHeader5.Width = 133;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1265, 562);
+            this.button2.Location = new System.Drawing.Point(397, 562);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(189, 77);
+            this.button2.Size = new System.Drawing.Size(179, 77);
             this.button2.TabIndex = 5;
-            this.button2.Text = "e7 Objekto Klasifikavimas";
+            this.button2.Text = "Objektu Klasifikavimas";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -194,9 +228,9 @@ namespace Nearest_Neighbors
             // 
             // cartesianChart1
             // 
-            this.cartesianChart1.Location = new System.Drawing.Point(610, 288);
+            this.cartesianChart1.Location = new System.Drawing.Point(610, 297);
             this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(637, 351);
+            this.cartesianChart1.Size = new System.Drawing.Size(637, 342);
             this.cartesianChart1.TabIndex = 12;
             this.cartesianChart1.Text = "cartesianChart1";
             // 
@@ -215,9 +249,9 @@ namespace Nearest_Neighbors
             this.listBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox3.FormattingEnabled = true;
             this.listBox3.ItemHeight = 25;
-            this.listBox3.Location = new System.Drawing.Point(610, 53);
+            this.listBox3.Location = new System.Drawing.Point(1270, 506);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(637, 104);
+            this.listBox3.Size = new System.Drawing.Size(568, 129);
             this.listBox3.TabIndex = 15;
             // 
             // listBox4
@@ -239,16 +273,6 @@ namespace Nearest_Neighbors
             this.label6.Size = new System.Drawing.Size(239, 20);
             this.label6.TabIndex = 17;
             this.label6.Text = "Pagal k-NN e7 Objekto Z = ";
-            // 
-            // listBox5
-            // 
-            this.listBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox5.FormattingEnabled = true;
-            this.listBox5.ItemHeight = 25;
-            this.listBox5.Location = new System.Drawing.Point(610, 167);
-            this.listBox5.Name = "listBox5";
-            this.listBox5.Size = new System.Drawing.Size(637, 104);
-            this.listBox5.TabIndex = 18;
             // 
             // listBox1
             // 
@@ -282,9 +306,9 @@ namespace Nearest_Neighbors
             // 
             // Display
             // 
-            this.Display.Location = new System.Drawing.Point(1270, 506);
+            this.Display.Location = new System.Drawing.Point(263, 562);
             this.Display.Name = "Display";
-            this.Display.Size = new System.Drawing.Size(563, 49);
+            this.Display.Size = new System.Drawing.Size(128, 77);
             this.Display.TabIndex = 22;
             this.Display.Text = "Atvaizduoti";
             this.Display.UseVisualStyleBackColor = true;
@@ -294,35 +318,125 @@ namespace Nearest_Neighbors
             // 
             this.revenueBindingSource1.CurrentChanged += new System.EventHandler(this.revenueBindingSource1_CurrentChanged);
             // 
-            // button3
+            // button6
             // 
-            this.button3.Location = new System.Drawing.Point(1499, 561);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(221, 77);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "e8 Objekto Klasifikavimas";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button6.Location = new System.Drawing.Point(485, 361);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(87, 35);
+            this.button6.TabIndex = 26;
+            this.button6.Text = "Pakeisti";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button4
+            // SportoSakaTxt
             // 
-            this.button4.Location = new System.Drawing.Point(1726, 561);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(107, 77);
-            this.button4.TabIndex = 24;
-            this.button4.Text = "Ištrinti paskutinę eilutę";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.SportoSakaTxt.Location = new System.Drawing.Point(263, 361);
+            this.SportoSakaTxt.Multiline = true;
+            this.SportoSakaTxt.Name = "SportoSakaTxt";
+            this.SportoSakaTxt.Size = new System.Drawing.Size(105, 35);
+            this.SportoSakaTxt.TabIndex = 27;
             // 
-            // button5
+            // listView3
             // 
-            this.button5.Location = new System.Drawing.Point(1460, 561);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(33, 77);
-            this.button5.TabIndex = 25;
-            this.button5.Text = "+";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9});
+            this.listView3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView3.HideSelection = false;
+            this.listView3.Location = new System.Drawing.Point(594, 53);
+            this.listView3.Name = "listView3";
+            this.listView3.Size = new System.Drawing.Size(322, 238);
+            this.listView3.TabIndex = 28;
+            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.listView3.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Tag = "";
+            this.columnHeader6.Text = "Ūgis";
+            this.columnHeader6.Width = 85;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Svoris";
+            this.columnHeader7.Width = 103;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Sporto šaka";
+            this.columnHeader8.Width = 128;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Pozicija";
+            this.columnHeader9.Width = 116;
+            // 
+            // listView4
+            // 
+            this.listView4.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader10,
+            this.columnHeader11,
+            this.columnHeader12,
+            this.columnHeader13});
+            this.listView4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView4.HideSelection = false;
+            this.listView4.Location = new System.Drawing.Point(922, 53);
+            this.listView4.Name = "listView4";
+            this.listView4.Size = new System.Drawing.Size(325, 238);
+            this.listView4.TabIndex = 29;
+            this.listView4.UseCompatibleStateImageBehavior = false;
+            this.listView4.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Tag = "";
+            this.columnHeader10.Text = "Ūgis";
+            this.columnHeader10.Width = 85;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Svoris";
+            this.columnHeader11.Width = 103;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "Sporto šaka";
+            this.columnHeader12.Width = 128;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "Pozicija";
+            this.columnHeader13.Width = 116;
+            // 
+            // SvorisTxt
+            // 
+            this.SvorisTxt.Location = new System.Drawing.Point(152, 361);
+            this.SvorisTxt.Multiline = true;
+            this.SvorisTxt.Name = "SvorisTxt";
+            this.SvorisTxt.Size = new System.Drawing.Size(105, 35);
+            this.SvorisTxt.TabIndex = 30;
+            // 
+            // PozicijaTxt
+            // 
+            this.PozicijaTxt.Location = new System.Drawing.Point(374, 361);
+            this.PozicijaTxt.Multiline = true;
+            this.PozicijaTxt.Name = "PozicijaTxt";
+            this.PozicijaTxt.Size = new System.Drawing.Size(105, 35);
+            this.PozicijaTxt.TabIndex = 31;
+            // 
+            // UgisTxt
+            // 
+            this.UgisTxt.Location = new System.Drawing.Point(41, 361);
+            this.UgisTxt.Multiline = true;
+            this.UgisTxt.Name = "UgisTxt";
+            this.UgisTxt.Size = new System.Drawing.Size(105, 35);
+            this.UgisTxt.TabIndex = 32;
+            // 
+            // Id
+            // 
+            this.Id.Text = "Id";
             // 
             // point2DBindingSource
             // 
@@ -333,14 +447,17 @@ namespace Nearest_Neighbors
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1850, 676);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.UgisTxt);
+            this.Controls.Add(this.PozicijaTxt);
+            this.Controls.Add(this.SvorisTxt);
+            this.Controls.Add(this.listView4);
+            this.Controls.Add(this.listView3);
+            this.Controls.Add(this.SportoSakaTxt);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.Display);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.listBox6);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.listBox5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.listBox4);
             this.Controls.Add(this.listBox3);
@@ -379,26 +496,40 @@ namespace Nearest_Neighbors
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.Button button2;
         public System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private LiveCharts.WinForms.CartesianChart cartesianChart1;
         private System.Windows.Forms.Label label5;
-        public System.Windows.Forms.ListBox listBox3;
         public System.Windows.Forms.ListBox listBox4;
         private System.Windows.Forms.Label label6;
-        public System.Windows.Forms.ListBox listBox5;
         public System.Windows.Forms.ListBox listBox1;
         public System.Windows.Forms.ListBox listBox6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.BindingSource point2DBindingSource;
         private System.Windows.Forms.Button Display;
         private System.Windows.Forms.BindingSource revenueBindingSource1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        public System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TextBox SportoSakaTxt;
+        private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ListView listView4;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
+        public System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.TextBox SvorisTxt;
+        private System.Windows.Forms.TextBox PozicijaTxt;
+        private System.Windows.Forms.TextBox UgisTxt;
+        public System.Windows.Forms.ColumnHeader Id;
     }
 }
 

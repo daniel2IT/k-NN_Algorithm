@@ -19,23 +19,28 @@ namespace Nearest_Neighbors
 
         // User Class Stuff
         public int Id { get; private set; }
+        public string Idd { get; private set; }
         public String x { get; private set; }
         public String y { get; private set; }
         public String z { get; private set; }
+        public String pozicija { get; private set; }
 
-        public Connection(int Id, string x , string y ,string z)
+        public Connection(int Id, string x , string y ,string z, string pozicija)
         {
             this.Id = Id;
             this.x = x;
             this.y = y;
             this.z = z;
+            this.pozicija = pozicija;
         }
 
-        public Connection(string x, string y, string z)
+        public Connection(string Id, string x, string y, string z, string pozicija)
         {
+            this.Idd = Id;
             this.x = x;
             this.y = y;
             this.z = z;
+            this.pozicija = pozicija;
         }
 
         public static void Initialize()
@@ -127,9 +132,11 @@ namespace Nearest_Neighbors
                 int id = (int)reader["id"];
                 String x = (String)reader["X"];
                 String y = (String)reader["Y"];
-                String z = (String)reader["Z"];
+                String z = (String)reader["SportoSaka"];
+                String pozicija = (String)reader["Pozicija"];
 
-                Connection u = new Connection(id, x, y, z);
+
+                Connection u = new Connection(id, x, y, z, pozicija);
 
                 users.Add(u);
             }
@@ -147,20 +154,24 @@ namespace Nearest_Neighbors
             List<Connection> Objektai = new List<Connection>();
 
             // Initialize Objektai Klasifikavimui 1 
-            String x = (String)"1";
-            String y = (String)"2";
+            String id = (String)"1";
+            String x = (String)"185";
+            String y = (String)"99";
             String z = (String)"???";
+            String pozicija = (String)"";
 
-            Connection u = new Connection(x, y, z);
+            Connection u = new Connection(id ,x, y, z, pozicija);
 
             Objektai.Add(u);
 
             // Initialize Objektai Klasifikavimui 2
-             x = (String)"0";
-             y = (String)"2";
+            id = (String)"2";
+            x = (String)"201";
+             y = (String)"102";
              z = (String)"???";
+            pozicija = (String)"";
 
-            Connection u2 = new Connection(x, y, z);
+            Connection u2 = new Connection(id, x, y, z, pozicija);
 
             Objektai.Add(u2);
 
