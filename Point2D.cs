@@ -14,24 +14,27 @@ namespace Nearest_Neighbors
         public string Class { get; set; } // Sporto Saka 
 
         public string Pozicija { get; set; }
-        public string Idd { get; set; }
+        public double Amzius { get; set; }
+        public string Zaidejas { get; set; }
 
 
-        public Point2D(double x, double y, string @class, string @position)
+        public Point2D(double x, double y, string @class, string @position, string @zaidejas)
         {
             X = x;
             Y = y;
             Class = @class;
             Pozicija = @position;
+            Zaidejas = @zaidejas;
         }
 
-        public Point2D(string @Id, double x, double y, string @class, string @position)
+        public Point2D(string @zaidejas, double x, double y, string @class, string @position, double @amzius)
         {
             X = x;
             Y = y;
             Class = @class;
             Pozicija = @position;
-            Idd = @Id;
+            Amzius = @amzius;
+            Zaidejas = @zaidejas;
         }
 
         public double DistanceSquare(Point2D other, Form1 form, string sportoSaka)
@@ -41,22 +44,13 @@ namespace Nearest_Neighbors
             var yy = Y - other.Y;
 
 
-            if(other.X == 185)
-            {
+        
              //  form.listBox1.Items.Clear();
                //form.listBox3.Items.Clear();
 
                 form.listBox1.Items.Add(Math.Sqrt(((other.X - X) * (other.X - X) + (other.Y - Y) * (other.Y - Y))));
                 form.listBox3.Items.Add("Math.Sqrt(((" + other.X + "-" + X + ") * (" + +other.X + "-" + X + ") + (" + other.Y + "- " + Y + ") * (" + other.Y + "-" + Y + ")))");
-            }
-            else 
-            {
-               // form.listBox2.Items.Clear();
-               // form.listBox5.Items.Clear();
 
-                form.listBox2.Items.Add(Math.Sqrt(((X - other.X) * (X - other.X) + (Y - other.Y) * (Y - other.Y))));
-                form.listBox3.Items.Add("Math.Sqrt(((" + other.X + "-" + X + ") * (" + +other.X + "-" + X + ") + (" + other.Y + "- " + Y + ") * (" + other.Y + "-" + Y + ")))");
-            }
 
             return xx * xx + yy * yy;
         }
